@@ -5,13 +5,10 @@ import subprocess
 class TransmitDocksendCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		script = """
-		on run
-			ignoring application responses
 				tell application "Transmit"
 					open POSIX file "%s"
 				end tell
-			end ignoring
-		end run
+
 		"""
 
 		proc = subprocess.Popen(
